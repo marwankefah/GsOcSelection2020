@@ -5,14 +5,23 @@ from flask import Blueprint, request, jsonify,session,g
 import _sqlite3
 from models.posts import post as p
 import  helper
+import os
 fun = Blueprint('listing', __name__, url_prefix='/')
+
+location=os.path.dirname(__file__)
+dbLocation=os.path.join(location,'../'+p.postDbName)
+
 
 # we need here authentication in future
 @fun.before_request
 def before_request():
-    g.threadConn = sqlite3.connect(p.postDbName)
-    g.threadConn.row_factory = helper.dict_factory
-    g.threadC = g.threadConn.cursor()
+    try:
+        g.threadConn = sqlite3.connect(dbLocation)
+        print(dbLocation)
+        g.threadConn.row_factory = helper.dict_factory
+        g.threadC = g.threadConn.cursor()
+    except Exception:
+        raise InternalServerError
     return
 
 
