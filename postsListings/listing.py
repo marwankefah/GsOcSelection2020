@@ -17,7 +17,6 @@ dbLocation=os.path.join(location,'../'+p.postDbName)
 def before_request():
     try:
         g.threadConn = sqlite3.connect(dbLocation)
-        print(dbLocation)
         g.threadConn.row_factory = helper.dict_factory
         g.threadC = g.threadConn.cursor()
     except Exception:
