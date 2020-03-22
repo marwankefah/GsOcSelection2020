@@ -13,6 +13,7 @@ def xml_to_database(c,filepath):
     try:
         postsXmlTree = ET.parse(filepath)
     except FileNotFoundError as e:
+        print("FILE NOT FOUND")
         return
     postsXmlRoot=postsXmlTree.getroot()
     for child in postsXmlRoot:
