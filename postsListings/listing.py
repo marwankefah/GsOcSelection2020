@@ -24,7 +24,7 @@ def before_request():
     return
 
 
-@fun.route('/listing', methods=['GET'])
+@fun.route('/', methods=['GET'])
 def listing():
     if(g.threadC==None):
         return jsonify(success=False), 500

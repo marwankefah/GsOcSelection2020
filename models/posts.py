@@ -90,7 +90,7 @@ class post():
                 return c.execute(query).fetchall()
 
         else:
-            return c.execute("NULL=NULL").fetchone()
+            return []
 
 
     def drop_table(self,c):
