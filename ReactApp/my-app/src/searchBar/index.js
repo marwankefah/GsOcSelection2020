@@ -92,7 +92,7 @@ class SearchBar extends React.Component {
               </div>
               <InputBase
                 placeholder="Search for your posts with title or body here"
-                onChange={this.props.onSearch}
+                //onChange={this.props.onSearch}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
@@ -106,7 +106,7 @@ class SearchBar extends React.Component {
               <option value="1">View Count</option>
               <option value="0">Score</option>
             </select>
-            <Button onClick={this.props.onRefresh} color="inherit">Press to refresh</Button>
+            <Button onClick={this.props.onRefresh} color="inherit">Submit</Button>
           </Toolbar>
         </AppBar>
       </div>
