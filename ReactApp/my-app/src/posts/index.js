@@ -12,7 +12,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const styles = theme => ({
   card: {
-    maxWidth: 400,
   },
   media: {
     height: 0,
@@ -27,18 +26,28 @@ class posts extends React.Component {
   // handleClick = (event) =>  {
   //   this.props.----(this.props.repo)
   // }
-    post;
+  renderTitle= (title) => {
+      if(title==null){
+          return "NO TITLE";
+      }
+      else{return title;}
+  }
+    renderInfo= (score,viewCount) => {
+      console.log(score)
+          return "Score :"+score+" View Count :"+ viewCount;
+  }
   render() {
     const { classes } = this.props;
     return (
       <Card className={classes.card}>
         <CardHeader
-          title={this.props.post.title}
+          title={this.renderTitle(this.props.post.Title)}
         />
+
         <CardContent>
-          <Typography component="p" style={{minHeight: '90px', overflow: 'scroll'}}>
-            {this.props.post.body}
-          </Typography>
+            <div>Score : {this.props.post.Score} </div>
+            <div>View Count :{ this.props.post.ViewCount}</div>
+            <div dangerouslySetInnerHTML={{__html: this.props.post.Body}}/>
         </CardContent>
       </Card>
     );

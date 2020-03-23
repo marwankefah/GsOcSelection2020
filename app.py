@@ -3,10 +3,11 @@ from flask import Flask, request, jsonify
 import xmlToPostsDb
 import helper
 from models.posts  import post as p
-
+from flask_cors import  CORS
 app = Flask(__name__)
 #app.secret_key = "THIS_IS_A_TEST"
 
+CORS(app)
 # app.config['ENV'] = 'development'
 # app.config['DEBUG'] = True
 
@@ -28,14 +29,8 @@ except sqlite3.OperationalError as e:
 
 
 
-
 from postsListings.listing import fun as listingModule
 app.register_blueprint(listingModule)
-
-@app.route('/')
-def read_me():
-
-    return 'Hello World!'
 
 
 # Connects to the database specified in dbFile

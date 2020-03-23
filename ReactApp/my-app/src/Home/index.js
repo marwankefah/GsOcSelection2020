@@ -5,65 +5,75 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 
-import posts from "../posts"
+import Post from "../posts"
 import SearchBar from "../searchBar"
 import APIClient from '../apiClient'
 import listing from '../listing'
 
 const styles = theme => ({
  root: {
-   flexGrow: 1,
    marginTop: 30
  },
  paper: {
-   padding: theme.spacing.unit * 2,
+   padding: theme.spacing(2),
    textAlign: 'center',
    color: theme.palette.text.secondary,
  },
 });
 
 class Home extends React.Component {
- state = {
-    posts: [],
-    scoreOrViewCount:-1,
+     post={
+        Body:0,
+        Title:0,
+        Id:0,
+         ViewCount:-1,
+         Score:-1
+    }
+    state = {
+    posts:[], scoreOrViewCount:-1,
      searchTerm:""
  };
 
  async componentDidMount() {
-     console.log("HI from home")
    this.apiClient = new APIClient("");
-   this.apiClient.getposts().then((data) =>
-     this.setState({...this.state, posts: data})
+   this.apiClient.getposts().then((data) => this.setState({ ...this.state, posts:data})
    );
  }
 
-
-
-
-
-
- resetPosts= posts => this.setState({ ...this.state, posts })
+ resetPosts= posts => this.setState({ ...this.state, posts:posts })
  onSearch = (event) => {
    const target = event.target;
-   if (!target.value) { this.setState({searchTerm:""}); return }
+   if (!target.value || this.searchTerm==target.value) { this.setState({searchTerm:""}); return }
    this.setState({searchTerm: event.target.value});
+   this.onRefresh();
 
  }
 onListTypeChange = (event) => {
-     this.setState({value: event.target.value});
+
+     this.setState({scoreOrViewCount: event.target.value});
  }
+
  onRefresh = (event) => {
      listing.getJSONListing(this.state.searchTerm,this.state.scoreOrViewCount)
      .then((response) => {
-       this.setState({ ...this.state});
-       this.resetPosts(response.items);
+        this.setState({ ...this.state, posts:response});
+
      })
  }
-
+ renderpost = (posts) => {
+   if (!posts) { return [] }
+   return posts.map((post) => {
+       return (
+         <Grid key={post.Id}>
+             <Post post={post} />
+         </Grid>
+     );
+   })
+ }
  render() {
    return (
      <div className={styles.root}>
-       <SearchBar onSearch={this.onSearch} onListingTypeChanged={this.onListTypeChange} onRefres={this.onRefresh} />
+       <SearchBar onSearch={this.onSearch} onListingTypeChanged={this.onListTypeChange} onRefresh={this.onRefresh} />
        {/* <Tabs*/}
        {/*  indicatorColor="primary"*/}
        {/*  textColor="primary"*/}
@@ -71,14 +81,7 @@ onListTypeChange = (event) => {
        {/*>*/}
        {/*  <Tab label="posts" />*/}
        {/*</Tabs>*/}
-
-       <SwipeableViews
-         axis={'x-reverse'}
-       >
-         <Grid container spacing={16} style={{padding: '20px 0'}}>
-           { this.state.posts }
-         </Grid>
-       </SwipeableViews>
+           { this.renderpost(this.state.posts)}
      </div>
    );
  }
