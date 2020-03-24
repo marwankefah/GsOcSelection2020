@@ -37,4 +37,5 @@ for idx,file in enumerate(xmlFilePaths):
 
 liteConn.commit()
 
+
 liteConn.close()
