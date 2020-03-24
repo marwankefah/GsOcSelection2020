@@ -1,24 +1,22 @@
-### Features
-Ingesting XML files into SqLite database from script XML xmlToPostsDb.py
-Retrieving from database  with respect to a search term with order by feature 
 
 The C3G montreal node Selection Test
 =============
 
 ### Selection test for Ingesting the Canadian Common CV
 
+### Features
 Ingesting XML files into SqLite database from script XML xmlToPostsDb.py
 Retrieving from database  with respect to a search term with order by feature 
 
 
+### sample APi doc for the route
 
-###sample APi doc for the route
                 
 ----
 /**
 * @api {get} /?type=value&searchTerm=value   Retrieve Posts
 * @apiName RetrievePosts
-* @apiGroup BIOPOSTService
+* @apiGroup BioPostsService
 * @apiParam {String} type          (viewCount,Score)if u need to order the posts by the value specified.
 * @apiParam {String} searchTerm     if u need to retrieve posts searched with title and body with this term
 * @apiSuccess {Array}  posts        An array  of objects that contains data of the posts
@@ -48,16 +46,17 @@ Retrieving from database  with respect to a search term with order by feature
 */
 
 
-###Running procedures
+### Running Procedures
 
 Run the flask server
 `$ python app.py -flask `
+
 Dependecencies used withing the flask app if there is any not within the module
 Install the dependency if needed
 `$ pip install {depencyName} `
 ApiDoc==1.4.0
 cffi==1.14.0
-click==7.1.1
+click==7.1.1                                                                                  
 cryptography==2.8
 Flask==1.1.1
 flask-core==2.9.0
@@ -76,8 +75,8 @@ Werkzeug==1.0.0
 
 
 
-Route to the ReactApp dir and install dependency
-`$ npm install `
+#Route to the ReactApp dir and install dependency
+#`$ npm install `
 
-Start the Web Application 
-`$ npm  start `
+#Start the Web Application 
+#`$ npm  start `
