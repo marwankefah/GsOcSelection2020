@@ -1,9 +1,5 @@
 
-The C3G montreal node Selection Test
 =============
-
-### Selection test for Ingesting the Canadian Common CV
-
 ### Features
 Ingesting XML files into SqLite database from script XML xmlToPostsDb.py
 Retrieving from database  with respect to a search term with order by feature 
