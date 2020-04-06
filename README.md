@@ -18,7 +18,7 @@ Run the flask server
 
 Dependecencies used withing the flask app if there is any not within the module
 Install the dependency if needed
-`$ pip install {depencyName} `
+`$ pip install {dependcyName}
 ApiDoc==1.4.0
 cffi==1.14.0
 click==7.1.1                                                                                  
