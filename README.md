@@ -5,9 +5,41 @@ Ingesting XML files into SqLite database from script XML xmlToPostsDb.py
 Retrieving from database  with respect to a search term with order by feature 
 
 
-### sample APi doc for the route
+### Running Procedures
 
-                
+Run the flask server
+`$ python app.py -flask `
+
+#Route to the ReactApp dir and install dependency
+#`$ npm install `
+
+#Start the Web Application 
+#`$ npm  start `
+
+Dependecencies used withing the flask app if there is any not within the module
+Install the dependency if needed
+`$ pip install {depencyName} `
+ApiDoc==1.4.0
+cffi==1.14.0
+click==7.1.1                                                                                  
+cryptography==2.8
+Flask==1.1.1
+flask-core==2.9.0
+Flask-Cors==3.0.8
+itsdangerous==1.1.0
+Jinja2==2.11.1
+jsonschema==2.4.0
+MarkupSafe==1.1.1
+npm==0.1.1
+optional-django==0.1.0
+psycopg2==2.8.4
+psycopg2-binary==2.8.4
+pycparser==2.20
+six==1.14.0
+Werkzeug==1.0.0
+
+
+### sample Api doc for the route
 ----
 /**
 * @api {get} /?type=value&searchTerm=value   Retrieve Posts
@@ -41,36 +73,3 @@ Retrieving from database  with respect to a search term with order by feature
 *     }
 */
 
-
-### Running Procedures
-
-Run the flask server
-`$ python app.py -flask `
-
-#Route to the ReactApp dir and install dependency
-#`$ npm install `
-
-#Start the Web Application 
-#`$ npm  start `
-
-Dependecencies used withing the flask app if there is any not within the module
-Install the dependency if needed
-`$ pip install {depencyName} `
-ApiDoc==1.4.0
-cffi==1.14.0
-click==7.1.1                                                                                  
-cryptography==2.8
-Flask==1.1.1
-flask-core==2.9.0
-Flask-Cors==3.0.8
-itsdangerous==1.1.0
-Jinja2==2.11.1
-jsonschema==2.4.0
-MarkupSafe==1.1.1
-npm==0.1.1
-optional-django==0.1.0
-psycopg2==2.8.4
-psycopg2-binary==2.8.4
-pycparser==2.20
-six==1.14.0
-Werkzeug==1.0.0
