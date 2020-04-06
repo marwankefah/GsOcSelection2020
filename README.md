@@ -1,4 +1,4 @@
-
+Simple Flask App for GSOC selection
 =============
 ### Features
 Ingesting XML files into SqLite database from script XML xmlToPostsDb.py
