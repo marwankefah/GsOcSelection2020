@@ -10,10 +10,11 @@ Retrieving from database  with respect to a search term with order by feature
 Run the flask server
 `$ python app.py -flask `
 
-#Route to the ReactApp dir and install dependency
+Route to the ReactApp dir and install dependency
+
 #`$ npm install `
 
-#Start the Web Application 
+Start the Web Application 
 #`$ npm  start `
 
 Dependecencies used withing the flask app if there is any not within the module
@@ -37,7 +38,7 @@ psycopg2-binary==2.8.4
 pycparser==2.20
 six==1.14.0
 Werkzeug==1.0.0
-
+`$
 
 ### sample Api doc for the route
 ----
