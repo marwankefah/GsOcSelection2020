@@ -12,13 +12,13 @@ Run the flask server
 
 Route to the ReactApp dir and install dependency
 
-#`$ npm install `
+`$ npm install `
 
 Start the Web Application 
-#`$ npm  start `
+`$ npm  start `
 
 Dependecencies used withing the flask app if there is any not within the module
-Install the dependency if needed
+Install the dependency if needed \n
 `$ pip install {dependcyName}
 ApiDoc==1.4.0
 cffi==1.14.0
