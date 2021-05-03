@@ -43,12 +43,12 @@ Werkzeug==1.0.0
 ### sample Api doc for the route
 ----
 /**
-* @api {get} /?type=value&searchTerm=value   Retrieve Posts
-* @apiName RetrievePosts
-* @apiGroup BioPostsService
-* @apiParam {String} type          (viewCount,Score)if u need to order the posts by the value specified.
-* @apiParam {String} searchTerm     if u need to retrieve posts searched with title and body with this term
-* @apiSuccess {Array}  posts        An array  of objects that contains data of the posts
+@api {get} /?type=value&searchTerm=value   Retrieve Posts
+@apiName RetrievePosts
+@apiGroup BioPostsService
+@apiParam {String} type          (viewCount,Score)if u need to order the posts by the value specified.
+@apiParam {String} searchTerm     if u need to retrieve posts searched with title and body with this term
+@apiSuccess {Array}  posts        An array  of objects that contains data of the posts
 ```javascript
 HTTP/1.1 200 OK
       [
@@ -68,8 +68,8 @@ HTTP/1.1 200 OK
         ]
 ```
 
-* @apiError internalServerFindingError  internal error caused by unexplained behavior
-* @apiErrorExample Error-Response:
+@apiError internalServerFindingError  internal error caused by unexplained behavior
+@apiErrorExample Error-Response:
 ```javascript
      HTTP/1.1 403 Forbidden
      {
