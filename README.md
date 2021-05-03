@@ -7,18 +7,18 @@ Retrieving from database  with respect to a search term with order by feature
 
 ### Running Procedures
 
-Run the flask server
+Run the flask server <br/>
 `$ python app.py -flask `
 
-Route to the ReactApp dir and install dependency
+Route to the ReactApp dir and install dependency <br/>
 
 `$ npm install `
 
-Start the Web Application 
+Start the Web Application  <br/>
 `$ npm  start `
 
 Dependecencies used withing the flask app if there is any not within the module
-Install the dependency if needed \n
+Install the dependency if needed <br/>
 `$ pip install {dependcyName}
 ApiDoc==1.4.0
 cffi==1.14.0
